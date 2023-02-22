@@ -1,0 +1,320 @@
+<!DOCTYPE html">
+
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <link type="image/x-icon" href="https://sysweb.unach.mx/resources/imagenes/favicon.ico" rel="shortcut icon"/>
+  <link rel="stylesheet" href="http://sysweb.unach.mx/Ingresos/bootstrap/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="http://sysweb.unach.mx/Ingresos/bootstrap/css/mdb.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://sysweb.unach.mx/Ingresos/bootstrap/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" /><title>
+	HOLA Taller 4
+</title>
+    <script language="javascript" type="text/javascript">
+
+        function TipoAcceso(Tipo) {
+            $("#divPassword").hide();
+            $("#txtPassword").hide();
+            $("#listCve").hide();
+            $("#listUser").hide();
+            $("#txtCve").hide();
+            $("#listReferencia").hide();
+            $("#txtCve").show();
+            $("#divMsjGral").show();
+            $("#divMsjUsuDep").hide();
+
+            if (Tipo === "REFERENCIA") {
+                $("#listReferencia").show();
+                $("#listCve").hide();
+                $("#txtCve").attr("placeholder", "Referencia de 26 dígitos");
+                $('.txtCve').css('cursor', 'pointer');
+                $("#txtCve").focus();
+                $("#DDLTipoUsuario").val("4");
+            }
+            else if (Tipo === "FACTURA") {
+                $("#listReferencia").show();
+                $("#listCve").hide();
+                $("#txtCve").attr("placeholder", "Referencia de 26 dígitos");
+                $('.txtCve').css('cursor', 'pointer');
+                $("#txtCve").focus();
+                $('#DDLTipoUsuario option')[5].selected = true;
+
+            }
+
+        };
+
+        function LimpiarCampos() {
+            $("#divPassword").hide();
+            $("#txtPassword").hide();
+            $("#listCve").hide();
+            $("#listUser").hide();
+            $("#txtCve").hide();
+            $("#listReferencia").hide();
+            $("#divMsjGral").show();
+            $("#divMsjUsuDep").hide();
+        }
+
+        $(document).ready(function () {
+
+
+            $("#DDLTipoUsuario").change(function () {
+                $("#divPassword").hide();
+                $("#txtPassword").hide();
+                $("#listCve").hide();
+                $("#listUser").hide();
+                $("#txtCve").hide();
+                $("#listReferencia").hide();
+                $("#txtCve").show();
+                $("#divMsjGral").show();
+                $("#divMsjUsuDep").hide();
+
+                if ($("#DDLTipoUsuario").val() == "1" || $("#DDLTipoUsuario").val() == "2" || $("#DDLTipoUsuario").val() == "4" || $("#DDLTipoUsuario").val() == "6" || $("#DDLTipoUsuario").val() == "7") {
+                    $("#divPassword").hide();
+                    $("#txtPassword").hide();
+                    $("#txtCve").focus();
+
+                    if ($("#DDLTipoUsuario").val() == "1") {
+                        $("#txtCve").attr("placeholder", "Número de Ficha ó Matricula");
+                        $("#listUser").show();
+
+
+                    }
+                    else if ($("#DDLTipoUsuario").val() == "2") {
+                        $("#listReferencia").show();
+                        $("#listCve").hide();
+                        $("#txtCve").attr("placeholder", "Referencia de 26 dígitos");
+                        $('.txtCve').css('cursor', 'pointer');
+                    }
+                    else if ($("#DDLTipoUsuario").val() == "4") {
+                        $("#listReferencia").hide();
+                        $("#listCve").hide();
+                        $("#txtCve").hide();
+                        //$("#txtCve").attr("placeholder", "Referencia de 26 dígitos");
+                        //$('.txtCve').css('cursor', 'pointer');
+                    }
+                    else if ($("#DDLTipoUsuario").val() == "7") {
+                        $("#listReferencia").show();
+                        $("#listCve").hide();
+                        $("#txtCve").attr("placeholder", "Referencia de 26 dígitos");
+                        $('.txtCve').css('cursor', 'pointer');
+                    }
+                    else {
+                        $("#listReferencia").hide();
+                        $("#listUser").show();
+
+                        $("#txtCve").attr("placeholder", "Clave SYSWEB");
+                    }
+                }
+                else if ($("#DDLTipoUsuario").val() == "5") {
+                    $("#divPassword").hide();
+                    $("#txtPassword").hide();
+                    $("#listCve").hide();
+                    $("#txtCve").hide();
+                    $("#listReferencia").hide();
+                }
+                else {
+                    $("#divPassword").show();
+                    $("#txtPassword").show();
+                    $("#listReferencia").hide();
+                    $("#listCve").show();
+                    $("#txtCve").show();
+                    $("#txtCve").attr("placeholder", "Correo UNACH");
+                    $("#txtCve").focus();
+                    $("#divMsjGral").hide();
+                    $("#divMsjUsuDep").show();
+
+
+                }
+            });
+            $("#imgFacebook").click(function () {
+                $(location).attr('href', '');
+            });
+            $("#modalTelefonos").click(function () {
+                $("#exampleModal").modal("show");
+            });
+            $("#bttnModalActualizar").click(function () {
+                window.location = "";
+            });
+
+
+
+
+
+        });
+
+
+    </script>
+
+</head>
+<body>
+    <form name="form1" method="post" action="./" id="form1">
+<div>
+<input type="hidden" name="_EVENTTARGET" id="_EVENTTARGET" value="" />
+<input type="hidden" name="_EVENTARGUMENT" id="_EVENTARGUMENT" value="" />
+<input type="hidden" name="_VIEWSTATE" id="_VIEWSTATE" value="/wEPDwUKLTgzMzQyNDcyNWRkwKwHeTrfnj8RaV0WfRJUFMlMmdvrhFajSV57hi3BafM=" />
+</div>
+
+<script type="text/javascript">
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/Ingresos/WebResource.axd?d=GFEJaWMDzowGXPC2vhL-qf5J_sQM08twKFR3VXQHytRGw2FlpMoowqpPyq-xIYVLZZ1eSdpCbdTQDV0feKl5MkFOCFNlTho-hHkizZFmz781&amp;t=638018763588333543" type="text/javascript"></script>
+
+
+<script src="/Ingresos/ScriptResource.axd?d=pbWvyd7K4gkXd7YrGtgNnAzcGysOgKCLI3ng8U4OGWOTd8ebNpzGxuVZ16t_LwnSOrdODgD6MtnfcDbs9ysbY00BGfjg4XCLciijq6aqVu7Hx-OLBJcDYhoFIEemC84leSmmsq44R-ihJHjc-2Rco3BZHt1__o97uSRYr-vMSIo1&amp;t=ffffffffe6d5a9ac" type="text/javascript"></script>
+<script src="/Ingresos/ScriptResource.axd?d=dq8bu2bWgSZSA1XqzJ2GujatJfzb101CigakLyzdGLkFfBy_c8lVKJMBAj9EMUQOYzzJIWfgK2jhoPjGrMwHGiIQQ-nL8g4WOvdAheRie2b8bl3qAW1vlHgIi6LegBQh8PpTKYrniXkqZ11TWOokhqNYWdUjfPdKwqKwY5-jkyuaixkMoneIooRenJ_9a7KX0&amp;t=ffffffffe6d5a9ac" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="_VIEWSTATEGENERATOR" id="_VIEWSTATEGENERATOR" value="215E3FB8" />
+	<input type="hidden" name="_EVENTVALIDATION" id="_EVENTVALIDATION" value="/wEdAArZNl9jv3D8kYuvgvKIGxWIJaYK8jou/5t0ode+DRoJ/4HimsnnVRs57WriFQr/0oLGRIOuo6GZheoAZzY8YPWEudvGKdiIUglNR5lXY+U7y1khH4+bFEjgodQ5HY1+tteiJ73YRtSvDd0rQEEbhWIlAlRR8tDufdah6qQKbZotOXY2+Mc6SrnAqio3oCKbxYZt8fuKsCMPoOSzzbQvlqRNzuP2Bl/F1g1MtkhKecobPxPupcgfnT2J0fjlfVQoaO8=" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', ['tUpdatePanel2','','tUpdatePanel1',''], [], [], 90, '');
+//]]>
+</script>
+
+
+
+        <div class="page-header" style="background-color: #1044da">
+            <div class="row">
+                <div class="col-md-4">
+                    <img id="imgSYSWEB" src="https://sysweb.unach.mx/resources/imagenes/sysweb2018230.png" class="img-fluid d-none d-sm-none d-md-block" alt="Responsive image" style="cursor: pointer" />
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="text-light font-weight-bold">
+                        <h4 class="media-heading">Universidad Autonoma de Chiapas</h4>
+                        
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://sysweb.unach.mx/resources/imagenes/unach.jpg" class="img-fluid d-none d-sm-none d-md-block" alt="Responsive image" style="cursor: pointer" />
+                </div>
+            </div>
+        </div>
+        <div class="bg-light">
+            <article class="card-body mx-auto" style="max-width: 600px;">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-end social_icon">
+                            
+                            <span>
+                                <button id="imgFacebook" type="button" class="btn btn-primary btn-lg">
+                                    <i class="fab fa-facebook-square"></i>
+                                </button>
+                                &nbsp;
+                                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#exampleModal">
+                                            <i class="fas fa-phone-square"></i>
+                                        </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5>Iniciar Sesión</h5>
+                        
+	<option value="5">Usuario</option>
+    <input placeholder=""> </input>
+
+    <option value="5">Contraseña</option>
+    <input placeholder=""> </input>
+	
+
+</select>
+                        </div>
+                        <div class="form-group input-group">
+                            <div id="listUser" class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                            </div>
+                            <div id="listCve" class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-at"></i></span>
+                            </div>
+                            <div id="listReferencia" class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-barcode"></i></span>
+                            </div>
+                            <input name="txtCve" type="text" id="txtCve" tabindex="1" class="form-control" />
+                        </div>
+                        <div class="form-group input-group">
+                            <div id="divPassword" class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                            </div>
+                            <input name="txtPassword" type="password" id="txtPassword" tabindex="2" class="form-control" placeholder="Contraseña" />
+
+                        </div>
+                        <div class="form-group text-center">
+                            <div id="UpdatePanel2">
+	
+                                    
+                                
+</div>
+                            <br />
+                            <div id="UpdatePanel1">
+	
+                                    <input type="submit" name="btnIngresar" value="Iniciar Sesión" id="btnIngresar" tabindex="5" class="btn" style="background-color: #d2af47; color: #fff" />
+                                
+</div>
+                            <div id="updPrMultiview" style="display:none;">
+	
+                                    <img id="imgMultiview" title="Espere un momento, por favor.." src="https://sysweb.unach.mx/resources/imagenes/ajax_loader_gray_512.gif" alt="Espere un momento, por favor.." style="height:50px;border-width:0px;" />
+                                
+</div>
+
+
+                       
+                        </div>
+                    </div>
+                  
+                </div>
+            </article>
+        </div>
+        <!-- card.// -->
+
+        <div class="piePagina" style="width: 100%">
+            <footer class="page-footer font-small pt-4" style="background-color: #666666; color: #fff">
+                <div class="container-fluid text-center text-md-left">
+                    <div class="row">
+                        <hr class="clearfix w-100 d-md-none pb-3">
+                        <div class="col-md-6 mb-md-0 mb-3">
+                            <h6 class="text-uppercase mb-4 font-weight-bold">Ruben Octavio Rodriguez Cano</h6>
+                            
+                        </div>
+                        <div class="col-md-6 mb-md-0 mb-3">
+                            <div class="text-xl-center">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright text-center py-3">Universidad Autónoma de Chiapas</div>
+            </footer>
+        </div>
+
+       
+    
+
+<script type="text/javascript">
+//<![CDATA[
+LimpiarCampos();Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":"UpdatePanel1","displayAfter":500,"dynamicLayout":true}, null, null, $get("updPrMultiview"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>

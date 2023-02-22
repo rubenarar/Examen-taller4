@@ -1,0 +1,16 @@
+body {
+}
+
+.Sombra1 {
+    -webkit-box-shadow: 0px 0px 1px 0px rgba(122,122,122,1);
+    -moz-box-shadow: 0px 0px 1px 0px rgba(122,122,122,1);
+    box-shadow: 0px 0px 1px 0px rgba(122,122,122,1);
+}
+
+a.menu {
+    color: #d6e3ff !important;
+}
+
+    a.menu:hover {
+        color: white !important;
+    }
