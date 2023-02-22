@@ -94,8 +94,7 @@
                         $("#listReferencia").hide();
                         $("#listCve").hide();
                         $("#txtCve").hide();
-                        //$("#txtCve").attr("placeholder", "Referencia de 26 dígitos");
-                        //$('.txtCve').css('cursor', 'pointer');
+                       
                     }
                     else if ($("#DDLTipoUsuario").val() == "7") {
                         $("#listReferencia").show();
@@ -171,7 +170,7 @@ function __doPostBack(eventTarget, eventArgument) {
         theForm.submit();
     }
 }
-//]]>
+
 </script>
 
 
@@ -186,14 +185,14 @@ function __doPostBack(eventTarget, eventArgument) {
 	<input type="hidden" name="_EVENTVALIDATION" id="_EVENTVALIDATION" value="/wEdAArZNl9jv3D8kYuvgvKIGxWIJaYK8jou/5t0ode+DRoJ/4HimsnnVRs57WriFQr/0oLGRIOuo6GZheoAZzY8YPWEudvGKdiIUglNR5lXY+U7y1khH4+bFEjgodQ5HY1+tteiJ73YRtSvDd0rQEEbhWIlAlRR8tDufdah6qQKbZotOXY2+Mc6SrnAqio3oCKbxYZt8fuKsCMPoOSzzbQvlqRNzuP2Bl/F1g1MtkhKecobPxPupcgfnT2J0fjlfVQoaO8=" />
 </div>
         <script type="text/javascript">
-//<![CDATA[
+
 Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', ['tUpdatePanel2','','tUpdatePanel1',''], [], [], 90, '');
-//]]>
+
 </script>
 
 
 
-        <div class="page-header" style="background-color: #1044da">
+        <div class="page-header" style="background-color: #163799">
             <div class="row">
                 <div class="col-md-4">
                     <img id="imgSYSWEB" src="https://sysweb.unach.mx/resources/imagenes/sysweb2018230.png" class="img-fluid d-none d-sm-none d-md-block" alt="Responsive image" style="cursor: pointer" />
@@ -236,7 +235,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', ['tUpdate
     <input placeholder=""> </input>
 
     <option value="5">Año</option>
-    <input placeholder="2023"> </input>
+    <label>2023</label>
 	
 
 </select>
@@ -286,7 +285,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', ['tUpdate
                 </div>
             </article>
         </div>
-        <!-- card.// -->
+        
 
         <div class="piePagina" style="width: 100%">
             <footer class="page-footer font-small pt-4" style="background-color: #666666; color: #fff">
@@ -312,11 +311,10 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', ['tUpdate
     
 
 <script type="text/javascript">
-//<![CDATA[
+
 LimpiarCampos();Sys.Application.add_init(function() {
     $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":"UpdatePanel1","displayAfter":500,"dynamicLayout":true}, null, null, $get("updPrMultiview"));
 });
-//]]>
 </script>
 </form>
 </body>
